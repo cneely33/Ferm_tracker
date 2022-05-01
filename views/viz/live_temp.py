@@ -13,10 +13,6 @@ from app import app, no_data_fig
 from data.gsheets_data import google_sheets_data
 import functions
 
-# X = deque(maxlen=20)
-# X.append(1)
-# Y = deque(maxlen=20)
-# Y.append(1)
 
 ## create callback id prefex generator
 id_gen = functions.id_factory('live_feed')
@@ -28,21 +24,21 @@ layout = html.Div(
        n_intervals=0
        ),
     
-    html.Div(id=id_gen("print_n"), style={"text-align": "center"}),
+    # html.Div(id=id_gen("print_n"), style={"text-align": "center"}),
     
     dcc.Graph(id=id_gen('graph_temp'), figure={}),
     dcc.Graph(id=id_gen('graph_humidity'), figure={}),
     ]
 )
 
-@app.callback(Output(id_gen('print_n'), 'children'),
-              [Input(id_gen('graph_update'), 'n_intervals')])
-def return_n(n):
-    try:
-        n_count = 'interval count ' + str(n)
-    except Exception as e:
-        print(e)
-    return n_count
+# @app.callback(Output(id_gen('print_n'), 'children'),
+#               [Input(id_gen('graph_update'), 'n_intervals')])
+# def return_n(n):
+#     try:
+#         n_count = 'interval count ' + str(n)
+#     except Exception as e:
+#         print(e)
+#     return n_count
 
 @app.callback(Output(id_gen('graph_temp'), 'figure'),
               [Input(id_gen('graph_update'), 'n_intervals')])
