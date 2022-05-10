@@ -175,4 +175,4 @@ venv
 .env 
 .DS_Store
 data/token.pickle
-*.pickle
+
