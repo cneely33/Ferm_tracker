@@ -174,5 +174,3 @@ venv
 *.pyc 
 .env 
 .DS_Store
-data/token.pickle
-
