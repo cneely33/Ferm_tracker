@@ -208,4 +208,5 @@ venv
 *.pyc 
 .env 
 .DS_Store
-data/New folder/token.pickle
+data/token.pickle
+*.pickle
