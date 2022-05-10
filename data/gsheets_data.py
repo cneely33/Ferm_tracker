@@ -27,6 +27,7 @@ def google_sheets_data():
             file_path = os.path.dirname(__file__)
             file_name = 'desktop_client_secret_328820566670-mbkb5ll20n4d7ohb0uhfa1fnnag1l2bv.apps.googleusercontent.com.json'
             client_sec = os.path.join(file_path, file_name)
+            
             flow = InstalledAppFlow.from_client_secrets_file(
                 # here enter the name of your downloaded JSON file
                 client_sec, SCOPES) 
@@ -48,5 +49,3 @@ def google_sheets_data():
     # if not values_input and not values_expansion:
     #     print('No data found.')
     return df
-
-
