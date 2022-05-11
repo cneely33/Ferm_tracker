@@ -45,7 +45,9 @@ def google_sheets_data():
     values_input = result_input.get('values', [])
     
     df = pd.DataFrame(values_input[1:], columns=values_input[0])
-    
+    df['temperature'] = df['temperature'].astype(float)
+    df['humidity'] = df['humidity'].astype(float)
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
     # if not values_input and not values_expansion:
     #     print('No data found.')
     return df
