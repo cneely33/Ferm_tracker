@@ -20,7 +20,7 @@ id_gen = functions.id_factory('live_feed')
 layout = html.Div(
     [
     dcc.Interval(id=id_gen('graph_update'),
-       interval=10*1000,
+       interval=300*1000,
        n_intervals=0
        ),
     
@@ -45,7 +45,7 @@ layout = html.Div(
 def update_graph_scatter_temp(n):
     try:
         df_copy = google_sheets_data()
-        df_copy = df_copy.tail(20)
+        df_copy = df_copy.head(20)
         fig = px.line(df_copy, x='timestamp', 
                       y='temperature', 
                       # color='country',
@@ -64,7 +64,7 @@ def update_graph_scatter_temp(n):
 def update_graph_scatter_humid(n):
     try:
         df_copy = google_sheets_data()
-        df_copy = df_copy.tail(20)
+        df_copy = df_copy.head(20)
         fig = px.line(df_copy, x='timestamp', 
                       y='humidity', 
                       # color='country',
