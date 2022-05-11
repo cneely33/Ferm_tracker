@@ -20,7 +20,7 @@ id_gen = functions.id_factory('live_feed')
 layout = html.Div(
     [
     dcc.Interval(id=id_gen('graph_update'),
-       interval=10*10000,
+       interval=10*1000,
        n_intervals=0
        ),
     
