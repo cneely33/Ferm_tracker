@@ -174,3 +174,4 @@ venv
 *.pyc 
 .env 
 .DS_Store
+data/auth_token/desktop_client_secret_328820566670-mbkb5ll20n4d7ohb0uhfa1fnnag1l2bv.apps.googleusercontent.com.json
